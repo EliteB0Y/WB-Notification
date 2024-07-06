@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 flask
+=======
+flask
+>>>>>>> master
 git+https://github.com/dolfies/discord.py-self.git
