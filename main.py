@@ -1,7 +1,7 @@
 from discord.ext import commands
 from keep_alive import keep_alive
 import os
-
+#import secret
 client = commands.Bot(command_prefix="okay neb ", self_bot=True)
 
 # Declare Bot Variables here
@@ -26,8 +26,10 @@ async def on_message(message):
                 channel = client.get_channel(notification_channel_id)
                 await channel.send(f"### WorldBoss: {worldboss}")
 
-        await client.process_commands(message)
-
+    elif message.guild.id == 799192078222753832:
+        if client.user.mentioned_in(message):
+            await message.add_reaction('👍')
+    
 @client.event
 async def on_ready():
     print('Ready to Notify: ', client.user)
